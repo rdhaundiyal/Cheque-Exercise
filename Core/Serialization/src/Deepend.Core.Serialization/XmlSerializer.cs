@@ -3,9 +3,10 @@ using System.Xml.Serialization;
 
 namespace Deepend.Core.Serialization
 {
-    public class XmlSerializer
+    public class XmlSerializer:ISerializer
     {
-        public static T Deserialize<T>(string data) where T : class
+      
+        public  T Deserialize<T>(string data) where T : class
         {
             var xRoot = new XmlRootAttribute { ElementName = "cheques" };
             var serializer = new System.Xml.Serialization.XmlSerializer(typeof(T), xRoot);

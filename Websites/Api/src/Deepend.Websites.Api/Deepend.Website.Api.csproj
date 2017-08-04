@@ -123,6 +123,7 @@
   <ItemGroup>
     <Compile Include="App_Start\AutofacWebApiConfig.cs" />
     <Compile Include="App_Start\AutomapperConfig.cs" />
+    <Compile Include="Configuration\Settings.cs" />
     <Compile Include="Controllers\ChequeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -156,6 +157,10 @@
     <ProjectReference Include="..\..\..\..\Core\Repository\src\Deepend.Core.Repository\Deepend.Core.Repository.csproj">
       <Project>{14a073fc-7dd9-45f3-a176-b0d310802df8}</Project>
       <Name>Deepend.Core.Repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Core\Serialization\src\Deepend.Core.Serialization\Deepend.Core.Serialization.csproj">
+      <Project>{933bb8fa-017a-479e-9246-c948a98f8d8b}</Project>
+      <Name>Deepend.Core.Serialization</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\..\..\Services\Model\src\Deepend.Services.Model\Deepend.Service.Model.csproj">
       <Project>{138fe245-53e4-4201-9e33-c748262b40c7}</Project>
