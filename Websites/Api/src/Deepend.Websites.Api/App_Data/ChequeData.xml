@@ -1,0 +1,51 @@
+﻿<cheques>
+  <cheque>
+    <id>ICICI00345678</id>
+    <name>Leo Tolstoy</name>
+    <date>12/05/1953</date>
+    <currency>$</currency>
+    <amount>756.89</amount>
+  </cheque>
+  <cheque>
+    <id>ICICI00345679</id>
+    <name>William Shakespeare</name>
+    <date>10/08/1953</date>
+    <currency>$</currency>
+    <amount>487.55</amount>
+  </cheque>
+  <cheque>
+    <id>ICICI00345680</id>
+    <name>Agatha Christie</name>
+    <date>02/06/1953</date>
+    <currency>$</currency>
+    <amount>221.12</amount>
+  </cheque>
+  <cheque>
+    <id>ICICI00345681</id>
+    <name>Sir Arthur Conan Doyle</name>
+    <date>11/05/1953</date>
+    <currency>$</currency>
+    <amount>345.90</amount>
+  </cheque>
+  <cheque>
+    <id>ICICI00345682</id>
+    <name>Charles Dickens</name>
+    <date>05/09/1953</date>
+    <currency>$</currency>
+    <amount>465.09</amount>
+  </cheque>
+  <cheque>
+    <id>ICICI00345683</id>
+    <name>H H Munroe</name>
+    <date>11/07/1953</date>
+    <currency>$</currency>
+    <amount>237.99</amount>
+  </cheque>
+  <cheque>
+    <id>ICICI00345684</id>
+    <name>Jules Verne</name>
+    <date>09/08/1953</date>
+    <currency>$</currency>
+    <amount>636.99</amount>
+  </cheque>
+</cheques>
