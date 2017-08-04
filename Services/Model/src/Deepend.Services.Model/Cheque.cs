@@ -10,18 +10,26 @@ namespace Deepend.Services.Model
         public DateTime ChequeDate { get; set; }
         public string Currency { get; set; }
         public decimal Amount { get; set; }
-        public string AmountInWords { get { return ConvertToWords(Amount); } }
+        public string AmountInWords { get { return ConvertToWords(Amount,Currency); } }
 
 
 
-        private static string ConvertToWords(decimal amount)
+        private static string ConvertToWords(decimal amount,string currency)
         {
+            try
+            {
+
             var amountString = amount.ToString(CultureInfo.InvariantCulture);
             var len = amountString.Length;
             var decimalIndex = amountString.IndexOf('.');
             var numberPart = amountString.Substring(0, decimalIndex);
             var decimalPart = amountString.Substring(decimalIndex + 1, len - decimalIndex - 1);
-            return string.Format("{0} & {1} cents", NumberToWords(Convert.ToInt32(numberPart)), NumberToWords(Convert.ToInt32(decimalPart)));
+            return string.Format("{0} {1} & {2} cents", currency, NumberToWords(Convert.ToInt32(numberPart)), NumberToWords(Convert.ToInt32(decimalPart)));
+            }
+            catch (Exception ex)
+            {
+                return string.Empty;
+            }
         }
       //Method taken from internet
         private static string NumberToWords(int number)

@@ -1,22 +1,11 @@
 ﻿<script type="text/javascript">
-    function ChequeViewModel() {
+    function ChequeListViewModel() {
         var self = this;
         self.ID = ko.observable("");
         self.Name = ko.observable("");
         self.ChequeDate = ko.observable("");
         self.Currency = ko.observable("");
         self.Amount = ko.observable("");
-
-
-        var Cheque = {
-            ID: self.ID,
-            Name: self.Name,
-            ChequeDate: self.ChequeDate,
-            Currency: self.Currency,
-            Amount: self.Amount
-
-        };
-
         self.Cheque = ko.observable();
         self.Cheques = ko.observableArray();
 
@@ -31,13 +20,10 @@
             }
         });
 
-
     }
-
     // Binding knockout
-
     $(document).ready(function () {
-        var viewModel = new ChequeViewModel();
+        var viewModel = new ChequeListViewModel();
         ko.applyBindings(viewModel);
     });
 </script>
@@ -55,7 +41,7 @@
                 <th>Name</th>
                 <th>Date</th>
                 <th>Amount</th>
-
+                <th>View</th>
 
             </tr>
         </thead>
