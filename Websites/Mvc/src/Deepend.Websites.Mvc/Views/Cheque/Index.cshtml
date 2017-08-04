@@ -1,0 +1,70 @@
+﻿@model string
+<script type="text/javascript">
+    function ChequeViewModel() {
+        var self = this;
+        self.ID = ko.observable("");
+        self.Name = ko.observable("");
+        self.ChequeDate = ko.observable("");
+        self.Currency = ko.observable("");
+        self.Amount = ko.observable("");
+        self.AmountInWords = ko.observable("");
+        self.Cheque = ko.observable();
+        self.Cheques = ko.observableArray();
+      
+        $.ajax({
+            url: 'http://localhost:8181/ChequeService/api/cheque/'+'@Model',
+            cache: false,
+            type: 'GET',
+            contentType: 'application/json; charset=utf-8',
+            data: {},
+            success: function (data) {
+
+                self.Cheque(data);
+
+            }
+        });
+
+
+    }
+
+    
+    // Binding knockout
+
+    $(document).ready(function () {
+        var viewModel = new ChequeViewModel();
+        ko.applyBindings(viewModel);
+    });
+</script>
+
+@{
+    ViewBag.Title = "Cheque List";
+}
+<h3>Cheque Details</h3>
+
+<div data-bind="with: Cheque">
+    <div class="well">
+        <strong>ID: </strong>&nbsp;&nbsp;<span data-bind="text: ID"></span>
+
+    </div>
+    <div class="well">
+        <strong>Name: </strong>&nbsp;&nbsp;<span data-bind="text: Name"></span>
+
+    </div>
+    <div class="well">
+        <strong>Amount: </strong>&nbsp;&nbsp;<span data-bind="text:Currency + Amount"></span>
+
+    </div>
+    <div class="well">
+        <strong>Date: </strong>&nbsp;&nbsp;<span data-bind="text: ChequeDate"></span>
+
+    </div>
+    <div class="well">
+        <strong>Amount in word: </strong>&nbsp;&nbsp;<span data-bind="text: AmountInWords"></span>
+
+    </div>
+</div>
+
+
+
+
+
