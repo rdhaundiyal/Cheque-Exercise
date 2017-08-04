@@ -41,6 +41,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Exception", "Exception", "{
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Deepend.Core.Exception", "Core\Exception\src\Deepend.Core.Exception\Deepend.Core.Exception.csproj", "{7ED5F8A3-CBA4-4775-8827-EB3164928473}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Deepend.Core.Serialization.Test", "Core\Serialization\test\Deepend.Core.Serialization.Test\Deepend.Core.Serialization.Test.csproj", "{B340307A-5101-4FD4-9EDA-2E5848D88508}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -79,6 +81,10 @@ Global
 		{7ED5F8A3-CBA4-4775-8827-EB3164928473}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7ED5F8A3-CBA4-4775-8827-EB3164928473}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7ED5F8A3-CBA4-4775-8827-EB3164928473}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B340307A-5101-4FD4-9EDA-2E5848D88508}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B340307A-5101-4FD4-9EDA-2E5848D88508}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B340307A-5101-4FD4-9EDA-2E5848D88508}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B340307A-5101-4FD4-9EDA-2E5848D88508}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -98,6 +104,7 @@ Global
 		{F4ABDFB7-594B-4616-BB25-35DE7B96E8BA} = {C4FCA9BE-806E-463A-965B-21F975544DFC}
 		{AF36C980-5A61-491D-9C55-DC25012E3A30} = {6EDDA594-8F91-43E0-BF57-4B608C8A115B}
 		{933BB8FA-017A-479E-9246-C948A98F8D8B} = {15880047-3937-4E88-8CD2-E3CC47300B03}
+		{B340307A-5101-4FD4-9EDA-2E5848D88508} = {15880047-3937-4E88-8CD2-E3CC47300B03}
 		{14A073FC-7DD9-45F3-A176-B0D310802DF8} = {F164E437-E117-433A-8EDC-BE0D64473149}
 		{7ED5F8A3-CBA4-4775-8827-EB3164928473} = {80842BC1-808A-4197-8DBF-4A0F1A1247B1}
 	EndGlobalSection

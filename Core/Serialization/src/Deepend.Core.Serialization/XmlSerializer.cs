@@ -18,9 +18,8 @@ namespace Deepend.Core.Serialization
         {
             try
             {
-            //TODO:inject hardcoded string via DI
-                var xRoot = new XmlRootAttribute { ElementName = "cheques" };
-            var serializer = new System.Xml.Serialization.XmlSerializer(typeof(T), xRoot);
+         
+            var serializer = new System.Xml.Serialization.XmlSerializer(typeof(T));
             using (TextReader reader = new StringReader(data))
             {
                 return serializer.Deserialize(reader) as T;
