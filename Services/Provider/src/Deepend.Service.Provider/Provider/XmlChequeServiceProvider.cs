@@ -1,7 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Xml;
 using AutoMapper;
+using Deepend.Core.Exception;
+using Deepend.Core.Logging;
 using Deepend.Core.Serialization;
 using Deepend.Service.Provider.Dto;
 using Deepend.Services.Model;
@@ -13,27 +16,42 @@ namespace Deepend.Service.Provider.Provider
     {
         private readonly IMapper _mapper;
         private readonly ISerializer _serializer;
-        private readonly string _xmlDataFilePath ;
-        public XmlChequeServiceProvider(string xmlDataFilePath,ISerializer serializer, IMapper mapper)
+        private readonly string _xmlDataFilePath;
+        private readonly ILogger _logger;
+        public XmlChequeServiceProvider(string xmlDataFilePath, ISerializer serializer, IMapper mapper, ILogger logger)
         {
             _xmlDataFilePath = xmlDataFilePath;
             _mapper = mapper;
             _serializer = serializer;
+            _logger = logger;
         }
         public T Get<T>(string id) where T : class
         {
-
-         ;
-
-            var result = GetDeserializedCheque();
-            var cheque = result.Cheques.FirstOrDefault(k => k.ID == id);
-            return _mapper.Map<ChequeXml, Cheque>(cheque) as T;
+            try
+            {
+                var result = GetDeserializedCheque();
+                var cheque = result.Cheques.FirstOrDefault(k => k.ID == id);
+                return _mapper.Map<ChequeXml, Cheque>(cheque) as T;
+            }
+            catch (Exception ex)
+            {
+                _logger.Log(ex);
+                throw new ServiceException();
+            }
         }
 
         public IEnumerable<T> Get<T>() where T : class
         {
-            var result = GetDeserializedCheque();
-            return result.Cheques.Select(cheque => _mapper.Map<ChequeXml, Cheque>(cheque) as T).ToList();
+            try
+            {
+                var result = GetDeserializedCheque();
+                return result.Cheques.Select(cheque => _mapper.Map<ChequeXml, Cheque>(cheque) as T).ToList();
+            }
+            catch (Exception ex)
+            {
+                _logger.Log(ex);
+                throw new ServiceException();
+            }
         }
 
         private ChequeXmlCollection GetDeserializedCheque()
@@ -41,7 +59,7 @@ namespace Deepend.Service.Provider.Provider
             var contentxml = new XmlDocument();
             contentxml.Load(_xmlDataFilePath);
             return _serializer.Deserialize<ChequeXmlCollection>(contentxml.InnerXml);
-            
+
         }
     }
 }

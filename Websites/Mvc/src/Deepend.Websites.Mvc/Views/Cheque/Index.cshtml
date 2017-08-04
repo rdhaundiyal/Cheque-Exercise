@@ -1,4 +1,5 @@
 ﻿@model string
+           @{ ViewBag.Title = "Cheque Details";}
 <script type="text/javascript">
     function ChequeViewModel() {
         var self = this;
@@ -18,9 +19,18 @@
             contentType: 'application/json; charset=utf-8',
             data: {},
             success: function (data) {
-
-                self.Cheque(data);
-
+                $("#msgDiv").hide();
+                if (data == null) {
+                    $("#msgDiv").html("Sorry, no record found");
+                    $("#msgDiv").show();
+                } else {
+                    self.Cheque(data);
+                }
+               
+            },
+            error: function (err) {
+                $("#msgDiv").html("Request failed with status: " + err.status);
+                
             }
         });
     }
@@ -36,7 +46,7 @@
     ViewBag.Title = "Cheque List";
 }
 <h3>Cheque Details</h3>
-
+<div id="msgDiv" class="alert alert-info"></div>
 <div data-bind="with: Cheque">
     <div class="well">
         <strong>ID: </strong>&nbsp;&nbsp;<span data-bind="text: ID"></span>

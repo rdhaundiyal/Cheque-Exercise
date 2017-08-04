@@ -52,6 +52,14 @@
     <Compile Include="Repository\ChequeRepository.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Core\Exception\src\Deepend.Core.Exception\Deepend.Core.Exception.csproj">
+      <Project>{7ed5f8a3-cba4-4775-8827-eb3164928473}</Project>
+      <Name>Deepend.Core.Exception</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Core\Logging\src\Deepend.Core.Logging\Deepend.Core.Logging.csproj">
+      <Project>{af36c980-5a61-491d-9c55-dc25012e3a30}</Project>
+      <Name>Deepend.Core.Logging</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\..\..\Core\Repository\src\Deepend.Core.Repository\Deepend.Core.Repository.csproj">
       <Project>{14a073fc-7dd9-45f3-a176-b0d310802df8}</Project>
       <Name>Deepend.Core.Repository</Name>

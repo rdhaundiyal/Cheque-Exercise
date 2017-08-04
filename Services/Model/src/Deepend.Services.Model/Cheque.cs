@@ -31,7 +31,9 @@ namespace Deepend.Services.Model
                 return string.Empty;
             }
         }
-      //Method taken from internet
+      
+     //TODO:should this be moved to a common utility
+        //From internet
         private static string NumberToWords(int number)
         {
             if (number == 0)
