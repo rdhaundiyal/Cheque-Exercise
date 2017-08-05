@@ -2,6 +2,10 @@
 
 namespace Deepend.Core.Repository.Base
 {
+    /// <summary>
+    /// Base repository to retrieve data through service provider
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public abstract class Repository<T> : IRepository<T> where T : class
     {
         private readonly IServiceProvider _serviceProvider;

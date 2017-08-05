@@ -5,6 +5,9 @@ using System.Text;
 
 namespace Deepend.Core.Exception
 {
+    /// <summary>
+    /// Exception class for conversion of items exception
+    /// </summary>
     class ConversionException:System.Exception
     {
         private const string ConversionExceptionMessage = "An error occured while converting item";

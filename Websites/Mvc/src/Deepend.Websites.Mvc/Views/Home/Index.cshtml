@@ -1,4 +1,5 @@
-﻿@{ ViewBag.Title = "Cheque Listing";}
+﻿@using Deepend.Websites.Mvc.Configuration
+@{ ViewBag.Title = "Cheque Listing";}
 <script type="text/javascript">
     function ChequeListViewModel() {
         var self = this;
@@ -11,7 +12,7 @@
         self.Cheques = ko.observableArray();
 
         $.ajax({
-            url: 'http://localhost:8181/ChequeService/api/cheque',
+            url: '@Settings.ServiceBaseUrl' +'/cheque',
             cache: false,
             type: 'GET',
             contentType: 'application/json; charset=utf-8',
@@ -50,7 +51,7 @@
             <tr>
                 <td data-bind="text: ID"></td>
                 <td data-bind="text: Name"></td>
-                <td data-bind="text: ChequeDate"></td>
+                <td data-bind="text: ShortChequeDate"></td>
                 <td data-bind="text: Currency +Amount"></td>
                 <td><a data-bind="attr: { href: '/Cheque/'+ID }">View</a></td>
 

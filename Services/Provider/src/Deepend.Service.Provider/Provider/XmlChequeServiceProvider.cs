@@ -12,6 +12,9 @@ using XmlSerializer = Deepend.Core.Serialization.XmlSerializer;
 
 namespace Deepend.Service.Provider.Provider
 {
+    /// <summary>
+    /// Iservice provider implementation for xml service provider
+    /// </summary>
     public class XmlChequeServiceProvider : Core.Repository.Interface.IServiceProvider
     {
         private readonly IMapper _mapper;

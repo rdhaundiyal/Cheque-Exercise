@@ -4,6 +4,10 @@ using Deepend.Services.Model;
 
 namespace Deepend.Service.Provider.Repository
 {
+
+    /// <summary>
+    /// Repository for cheque
+    /// </summary>
     public class ChequeRepository : Repository<Cheque>
     {
         public ChequeRepository(IServiceProvider serviceProvider)

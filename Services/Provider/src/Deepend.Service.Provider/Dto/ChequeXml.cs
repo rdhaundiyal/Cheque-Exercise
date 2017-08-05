@@ -2,6 +2,9 @@
 
 namespace Deepend.Service.Provider.Dto
 {
+    /// <summary>
+    /// DTO for cheque
+    /// </summary>
     public class ChequeXml
     {
         [XmlElement("id")]

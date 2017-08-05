@@ -3,6 +3,9 @@ using System.Globalization;
 
 namespace Deepend.Services.Model
 {
+    /// <summary>
+    /// Model class for cheque which will be passed as json to calling application clients
+    /// </summary>
     public class Cheque
     {
         public string ID { get; set; }
@@ -11,7 +14,7 @@ namespace Deepend.Services.Model
         public string Currency { get; set; }
         public decimal Amount { get; set; }
         public string AmountInWords { get { return ConvertToWords(Amount,Currency); } }
-
+        public string ShortChequeDate { get { return ChequeDate.ToShortDateString(); } }
 
 
         private static string ConvertToWords(decimal amount,string currency)

@@ -2,6 +2,9 @@
 
 namespace Deepend.Core.Repository.Interface
 {
+    /// <summary>
+    /// Interface for service provider
+    /// </summary>
     public interface IServiceProvider
     {
         T Get<T>(string id) where T : class;

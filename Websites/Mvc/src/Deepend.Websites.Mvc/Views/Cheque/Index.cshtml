@@ -1,4 +1,5 @@
-﻿@model string
+﻿@using Deepend.Websites.Mvc.Configuration
+@model string
            @{ ViewBag.Title = "Cheque Details";}
 <script type="text/javascript">
     function ChequeViewModel() {
@@ -13,7 +14,7 @@
         self.Cheques = ko.observableArray();
       
         $.ajax({
-            url: 'http://localhost:8181/ChequeService/api/cheque/'+'@Model',
+            url:  '@Settings.ServiceBaseUrl'+'/cheque/'+'@Model',
             cache: false,
             type: 'GET',
             contentType: 'application/json; charset=utf-8',

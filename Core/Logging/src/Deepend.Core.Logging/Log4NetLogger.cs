@@ -2,6 +2,9 @@
 
 namespace Deepend.Core.Logging
 {
+    /// <summary>
+    /// Log4Net implementation of ILogger
+    /// </summary>
     public class Log4NetLogger : ILogger
     {
         private static readonly log4net.ILog log = log4net.LogManager.GetLogger

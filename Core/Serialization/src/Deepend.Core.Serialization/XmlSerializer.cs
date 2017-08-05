@@ -4,6 +4,9 @@ using Deepend.Core.Logging;
 
 namespace Deepend.Core.Serialization
 {
+    /// <summary>
+    /// xml implementation for ISerializer interface
+    /// </summary>
     public class XmlSerializer:ISerializer
     {
         private readonly ILogger _logger ;
